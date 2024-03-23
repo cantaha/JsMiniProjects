@@ -158,7 +158,6 @@ function addExamFunc(e) {
 
 addExam.addEventListener("click", addExamFunc);
 
-
 let darkModeBtn = document.querySelector("#darkModeBtn");
 let lightModeBtn = document.querySelector("#lightModeBtn");
 
@@ -185,8 +184,7 @@ function darkModefunc() {
 //   // document.body.classList.add("bg-light");
 // }
 
-
-darkModeBtn.addEventListener("click", darkModefunc)
+darkModeBtn.addEventListener("click", darkModefunc);
 // lightModeBtn.addEventListener("click", lightModefunc)
 
 function mousetextOnDark() {
@@ -199,8 +197,8 @@ function mousetextOffDark() {
   darkModeBtn.classList.add("text-warning");
 }
 
-darkModeBtn.addEventListener("mouseover", mousetextOnDark)
-darkModeBtn.addEventListener("mouseout", mousetextOffDark)
+darkModeBtn.addEventListener("mouseover", mousetextOnDark);
+darkModeBtn.addEventListener("mouseout", mousetextOffDark);
 
 function mousetextOnFind() {
   button3.classList.remove("text-warning");
@@ -212,8 +210,8 @@ function mousetextOffFind() {
   button3.classList.add("text-warning");
 }
 
-button3.addEventListener("mouseover", mousetextOnFind)
-button3.addEventListener("mouseout", mousetextOffFind)
+button3.addEventListener("mouseover", mousetextOnFind);
+button3.addEventListener("mouseout", mousetextOffFind);
 
 function mouseTextOnClear() {
   button4.classList.remove("text-warning");
@@ -225,8 +223,8 @@ function mouseTextOffClear() {
   button4.classList.add("text-warning");
 }
 
-button4.addEventListener("mouseover", mouseTextOnClear)
-button4.addEventListener("mouseout", mouseTextOffClear)
+button4.addEventListener("mouseover", mouseTextOnClear);
+button4.addEventListener("mouseout", mouseTextOffClear);
 
 function mouseTextOnAdd() {
   addATag.classList.remove("text-warning");
@@ -238,8 +236,8 @@ function mouseTextOffAdd() {
   addATag.classList.add("text-warning");
 }
 
-addATag.addEventListener("mouseover", mouseTextOnAdd)
-addATag.addEventListener("mouseout", mouseTextOffAdd)
+addATag.addEventListener("mouseover", mouseTextOnAdd);
+addATag.addEventListener("mouseout", mouseTextOffAdd);
 
 function mouseTextOnAddExam() {
   addExam.classList.remove("text-warning");
@@ -251,8 +249,8 @@ function mouseTextOffAddExam() {
   addExam.classList.add("text-warning");
 }
 
-addExam.addEventListener("mouseover", mouseTextOnAddExam)
-addExam.addEventListener("mouseout", mouseTextOffAddExam)
+addExam.addEventListener("mouseover", mouseTextOnAddExam);
+addExam.addEventListener("mouseout", mouseTextOffAddExam);
 
 function mouseTextOnAddTask() {
   button.classList.remove("text-warning");
@@ -264,5 +262,5 @@ function mouseTextOffAddTask() {
   button.classList.add("text-warning");
 }
 
-button.addEventListener("mouseover", mouseTextOnAddTask)
-button.addEventListener("mouseout", mouseTextOffAddTask)
+button.addEventListener("mouseover", mouseTextOnAddTask);
+button.addEventListener("mouseout", mouseTextOffAddTask);
