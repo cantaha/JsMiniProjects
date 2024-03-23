@@ -1,3 +1,5 @@
+/** @format */
+
 let button = document.getElementById("button-addon1");
 // let button2 = document.getElementById("button-addon2")
 let button3 = document.getElementById("button-addon3");
@@ -17,13 +19,7 @@ function addTask(e) {
   for (let i = 0; i < todos.length; i++) {
     if (!todos[i].value) {
       todos[i].value = findInput.value;
-      console.log(
-        "Yapılan event işlemi: " +
-          e.type +
-          "\n" +
-          "Event işleminin çalıştığı id: " +
-          e.target.id
-      );
+      console.log("Yapılan event işlemi: " + e.type + "\n" + "Event işleminin çalıştığı id: " + e.target.id);
       break;
     }
   }
@@ -41,25 +37,9 @@ findInput.addEventListener("keypress", function (e) {
 
 function findTask(e) {
   for (let i = 0; i < todos.length; i++) {
-    if (
-      findInput2.value.toUpperCase() == todos[i].value.toUpperCase() &&
-      todos[i].value != ""
-    ) {
-      p.innerText =
-        "Task " +
-        "'" +
-        todos[i].value +
-        "'" +
-        " in " +
-        todos[i].getAttribute("placeholder") +
-        " line";
-      console.log(
-        "Yapılan event işlem: " +
-          e.type +
-          "\n" +
-          "Event işleminin çalıştığı id: " +
-          e.target.id
-      );
+    if (findInput2.value.toUpperCase() == todos[i].value.toUpperCase() && todos[i].value != "") {
+      p.innerText = "Task " + "'" + todos[i].value + "'" + " in " + todos[i].getAttribute("placeholder") + " line";
+      console.log("Yapılan event işlem: " + e.type + "\n" + "Event işleminin çalıştığı id: " + e.target.id);
       break;
     } else {
       p.innerText = "Not found";
@@ -81,13 +61,7 @@ function clearAll(e) {
     todos[i].value = "";
     p.innerText = "";
     findInput2.value = "";
-    console.log(
-      "Yapılan event işlemi: " +
-        e.type +
-        "\n" +
-        "Event işleminin çalıştığı id: " +
-        e.target.id
-    );
+    console.log("Yapılan event işlemi: " + e.type + "\n" + "Event işleminin çalıştığı id: " + e.target.id);
   }
 }
 
