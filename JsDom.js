@@ -232,17 +232,17 @@ darkModeBtn.addEventListener("mouseover", mousetextOnDark);
 darkModeBtn.addEventListener("mouseout", mousetextOffDark);
 
 function mousetextOnFind() {
-  button3.classList.remove("text-warning");
-  button3.classList.add("text-secondary");
+  button2.classList.remove("text-warning");
+  button2.classList.add("text-secondary");
 }
 
 function mousetextOffFind() {
-  button3.classList.remove("text-secondary");
-  button3.classList.add("text-warning");
+  button2.classList.remove("text-secondary");
+  button2.classList.add("text-warning");
 }
 
-button3.addEventListener("mouseover", mousetextOnFind);
-button3.addEventListener("mouseout", mousetextOffFind);
+button2.addEventListener("mouseover", mousetextOnFind);
+button2.addEventListener("mouseout", mousetextOffFind);
 
 function mouseTextOnClear() {
   button4.classList.remove("text-warning");
@@ -295,3 +295,13 @@ function mouseTextOffAddTask() {
 
 button.addEventListener("mouseover", mouseTextOnAddTask);
 button.addEventListener("mouseout", mouseTextOffAddTask);
+
+function clickCheck() {
+  console.log("check1 clicked");
+  toDo1.value = "";
+  localStorage.removeItem(findInput2.value); 
+}
+
+let check1 = document.querySelector("#cbox1");
+
+check1.addEventListener("click", clickCheck);
