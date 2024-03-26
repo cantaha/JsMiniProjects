@@ -1,7 +1,7 @@
 /** @format */
 
 let button = document.getElementById("button-addon1");
-// let button2 = document.getElementById("button-addon2")
+let button2 = document.getElementById("button-addon2")
 let button3 = document.getElementById("button-addon3");
 let button4 = document.getElementById("button-addon4");
 let toDo1 = document.getElementById("todo1");
@@ -15,15 +15,58 @@ let todos = [toDo1, toDo2, toDo3, toDo4];
 let findInput = document.querySelector("#input1");
 let findInput2 = document.querySelector("#input2");
 
+let firstDiv = document.getElementById("addTask");
+let pDiv = document.getElementById("pDiv");
+
+document.addEventListener("DOMContentLoaded", pageLoaded);
+
+function pageLoaded() {
+  for (let i = 0; i < todos.length; i++) {
+    let todosValue = todos[i].value;
+    if (localStorage.getItem(todosValue) !== null) {
+    todos[i].getAttribute("placeholder") = localStorage.getItem(todosValue);
+    }
+  }
+}
+
 function addTask(e) {
+  if (findInput.value == "" || findInput.value == null) {
+    showAlert("danger", "Please enter a task");
+    return;
+  }
   for (let i = 0; i < todos.length; i++) {
     if (!todos[i].value) {
       todos[i].value = findInput.value;
       console.log("Yapılan event işlemi: " + e.type + "\n" + "Event işleminin çalıştığı id: " + e.target.id);
+      showAlert("success", "Task Added");
       break;
     }
   }
+  addLocal();
   findInput.value = "";
+  p.innerText = "";
+}
+
+function addLocal() {
+  for (let i = 0; i < todos.length; i++) {
+    if (localStorage.getItem(todos[i].value) === null) {
+      localStorage.setItem(todos[i].getAttribute("placeholder"), todos[i].value);
+      break;
+    }
+    else {
+      console.log("Already added");
+    }
+  }
+}
+
+function showAlert(type, message) {
+  const alert = document.createElement("div");
+  alert.className = `alert alert-${type} text-center`;
+  alert.textContent = message;
+  pDiv.appendChild(alert);
+  setTimeout(() => {
+    alert.remove();
+  }, 2000);
 }
 
 // button.onclick = addTask;
@@ -38,17 +81,30 @@ findInput.addEventListener("keypress", function (e) {
 function findTask(e) {
   for (let i = 0; i < todos.length; i++) {
     if (findInput2.value.toUpperCase() == todos[i].value.toUpperCase() && todos[i].value != "") {
+      showAlert("success", "Task Found");
+      findLocal();
       p.innerText = "Task " + "'" + todos[i].value + "'" + " in " + todos[i].getAttribute("placeholder") + " line";
       console.log("Yapılan event işlem: " + e.type + "\n" + "Event işleminin çalıştığı id: " + e.target.id);
       break;
     } else {
-      p.innerText = "Not found";
+      showAlert("warning", "Task not found");
+      break;
     }
   }
   findInput2.value = "";
 }
 
-button3.onclick = findTask;
+function findLocal() {
+  for (let i = 0; i < todos.length; i++) {
+    if (localStorage.getItem(todos[i].value) == findInput2.value) {
+      p.innerText = "Task " + "'" + todos[i].value + "'" + " in " + todos[i].getAttribute("placeholder") + " line";
+      break;
+    }
+  }
+}
+
+
+button2.onclick = findTask;
 findInput2.addEventListener("keypress", function (e) {
   if (e.key == "Enter") {
     findTask(e);
@@ -63,6 +119,7 @@ function clearAll(e) {
     findInput2.value = "";
     console.log("Yapılan event işlemi: " + e.type + "\n" + "Event işleminin çalıştığı id: " + e.target.id);
   }
+  localStorage.clear();
 }
 
 button4.onclick = clearAll;

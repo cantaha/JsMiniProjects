@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,54 +26,41 @@
         }
       } */
       body {
-        padding: 50px;
+        padding: 60px;
       }
 
       h1 {
         margin-top: 50px;
         font-size: 75px;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       }
 
       h2 {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       }
 
       #addTask {
         margin-top: 35px;
         font-size: 25px;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       }
 
       p {
         font-size: 25px;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
       }
 
-      #input1 {
+      #input1, #input2 {
         background-color: antiquewhite;
       }
-      #input2 {
+
+      #todo1, #todo2, #todo3, #todo4 {
         background-color: antiquewhite;
       }
-      #todo1 {
+
+      /* #cbox1, #cbox2, #cbox3, #cbox4 {
         background-color: antiquewhite;
-      }
-      #todo2 {
-        background-color: antiquewhite;
-      }
-      #todo3 {
-        background-color: antiquewhite;
-      }
-      #todo4 {
-        background-color: antiquewhite;
-      }
-      
-      
+      } */
     </style>
   </head>
   <body>
@@ -82,18 +71,12 @@
       <input
         id="input1"
         type="text"
-        class="form-control text-center border-warning "
+        class="form-control text-center border-warning"
         placeholder="Enter Task"
         aria-label="Example text with button addon"
         aria-describedby="button-addon1"
       />
-      <button
-        class="btn btn-outline-warning text-warning"
-        type="button"
-        id="button-addon1"
-      >
-        Add
-      </button>
+      <button class="btn btn-outline-warning text-warning" type="button" id="button-addon1">Add</button>
     </div>
 
     <br /><br />
@@ -108,60 +91,55 @@
           aria-describedby="button-addon2"
           id="input2"
         />
-        <!-- <button class="btn btn-outline-warning text-warning" type="button" id="button-addon2">Find</button> -->
+        <button class="btn btn-outline-warning text-warning" type="button" id="button-addon2">Find</button>
       </div>
+
       <div class="input-group-default">
-        <input
-          type="text"
-          class="form-control text-center mb-1 border-warning"
-          placeholder="To Do 1"
-          id="todo1"
-        />
-        <input
-          type="text"
-          class="form-control text-center mb-1 border-warning"
-          placeholder="To Do 2"
-          id="todo2"
-        />
-        <input
-          type="text"
-          class="form-control text-center mb-1 border-warning"
-          placeholder="To Do 3"
-          id="todo3"
-        />
-        <input
-          type="text"
-          class="form-control text-center mb-1 border-warning"
-          placeholder="To Do 4"
-          id="todo4"
-        />
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0 border-warning" type="checkbox" value="" aria-label="Checkbox for following text input" id="cbox1">
+          </div>
+          <input type="text" class="form-control text-center border-warning" placeholder="To Do 1" aria-label="Text input with checkbox" id="todo1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0 border-warning" type="checkbox" value="" aria-label="Checkbox for following text input" id="cbox2">
+          </div>
+          <input type="text" class="form-control text-center border-warning" placeholder="To Do 2" aria-label="Text input with checkbox" id="todo2">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0 border-warning" type="checkbox" value="" aria-label="Checkbox for following text input" id="cbox3">
+          </div>
+          <input type="text" class="form-control text-center border-warning" placeholder="To Do 3" aria-label="Text input with checkbox" id="todo3">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-text">
+            <input class="form-check-input mt-0 border-warning" type="checkbox" value="" aria-label="Checkbox for following text input" id="cbox4">
+          </div>
+          <input type="text" class="form-control text-center border-warning" placeholder="To Do 4" aria-label="Text input with checkbox" id="todo4">
+        </div>
+
+        <!-- <input type="text" class="form-control text-center mb-1 border-warning" placeholder="To Do 2" id="todo2" />
+        <input type="text" class="form-control text-center mb-1 border-warning" placeholder="To Do 3" id="todo3" />
+        <input type="text" class="form-control text-center mb-1 border-warning" placeholder="To Do 4" id="todo4" /> -->
       </div>
 
       <br />
 
       <div id="btnGroup" class="btn-group w-100">
-        <button
-          id="button-addon3"
-          class="btn btn-outline-warning text-warning"
-        >
-          Find All Todo
-        </button>
-        <button
-          id="button-addon4"
-          class="btn btn-outline-warning text-warning"
-        >
-          Clear All Todo
-        </button>
+        <!-- <button id="button-addon3" class="btn btn-outline-warning text-warning">Find All Todo</button> -->
+        <button id="button-addon4" class="btn btn-outline-warning text-warning">Clear All Todo</button>
       </div>
       <div class="btn-group w-100 mt-3" id="darkMode">
-        <button id="darkModeBtn" class="btn btn-outline-warning text-warning ">Dark Mode</button>
+        <button id="darkModeBtn" class="btn btn-outline-warning text-warning">Dark Mode</button>
         <!-- <button id="lightModeBtn" class="btn btn-outline-warning text-warning">Light Mode</button> -->
       </div>
     </div>
-
-    <p class="text-center text-warning display-6 mt-4" id="output"></p>
-
-
+    <div id="pDiv">
+      <p class="text-center text-warning display-6 mt-4" id="output"></p>
+    </div>
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
