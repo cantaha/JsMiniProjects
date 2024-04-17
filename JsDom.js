@@ -305,3 +305,4 @@ function clickCheck() {
 let check1 = document.querySelector("#cbox1");
 
 check1.addEventListener("click", clickCheck);
+
