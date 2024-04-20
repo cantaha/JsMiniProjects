@@ -7,7 +7,7 @@ const searchButton = document.querySelector("#todoSearchButton");
 const searchInput = document.querySelectorAll(".form-control")[1];
 const clearButton = document.querySelector("#clearButton");
 const alertArea = document.querySelector("#alert");
-const removeButton = document.querySelector(".fa-remove");
+const listGroup= document.querySelector(".list-group");
 
 let todos = [];
 
@@ -76,8 +76,8 @@ function allRemoveTodos() {
 
 
 function removeTodoToUI(e) {
-    if (e.target.className === "btn btn-light btn-sm delete-item") {
-        const todo = e.target.parentElement;
+    if (e.target.className === "list-group-item d-flex justify-content-between") {
+        const todo = e.target;
         todo.remove();
 
         removeTodoToStorage(todo.textContent);
@@ -114,11 +114,11 @@ function addTodoToUI(newTodo) {
 
     const a = document.createElement("a");
     a.href = "#";
-    a.className = "btn btn-light btn-sm delete-item";
+    a.className = "delete-item";
 
-    const i = document.createElement("span");
-    i.className = "glyphicon glyphicon-trash";
-
+    const i = document.createElement("i");
+    i.className = "";
+    
     a.appendChild(i);
     li.appendChild(a);
     todoList.appendChild(li);
