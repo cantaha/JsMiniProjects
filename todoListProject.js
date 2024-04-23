@@ -76,8 +76,8 @@ function allRemoveTodos() {
 
 
 function removeTodoToUI(e) {
-    if (e.target.className === "list-group-item d-flex justify-content-between") {
-        const todo = e.target;
+    if (e.target.tagName === "path") {
+        const todo = e.target.parentElement.parentElement.parentElement;
         todo.remove();
 
         removeTodoToStorage(todo.textContent);
@@ -114,10 +114,10 @@ function addTodoToUI(newTodo) {
 
     const a = document.createElement("a");
     a.href = "#";
-    a.className = "delete-item";
+    a.className = "btn btn-light btn";
 
     const i = document.createElement("i");
-    i.className = "";
+    i.className = "fa fa-trash";
     
     a.appendChild(i);
     li.appendChild(a);
