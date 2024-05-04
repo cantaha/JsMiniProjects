@@ -164,3 +164,11 @@ set1.add("value2")
 set1.add("value3")
 
 console.log(set1.size) /* çıktıda da görüldüğü üzere 4 adet eleman olmasına rağmen setteki eleman sayısı 3, Çünkü value1 değerini yalnızca bir kez ekledi ve bir kez döndürdü.  */
+
+
+// ? Template Literals
+
+function write(firstNAme, lastNAme) {
+    console.log(`Merhaba ${firstNAme} ${lastNAme}`)
+}
+
